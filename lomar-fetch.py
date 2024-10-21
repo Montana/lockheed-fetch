@@ -1,12 +1,16 @@
 import requests
 
-def fetch_lockheed_data():
+def lomar():
     url = "https://www.lockheedmartin.com"
+    cur = "Fetching Lockheed Martin data..."
+    print(cur)
+    curr = "Processing request..."
+    print(curr)
     try:
         response = requests.get(url)
         if response.status_code == 200:
             print("Data fetched successfully!")
-    
+
             with open("lockheed_data.html", "w") as file:
                 file.write(response.text)
         else:
@@ -15,4 +19,4 @@ def fetch_lockheed_data():
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    fetch_lockheed_data()
+    lomar()
